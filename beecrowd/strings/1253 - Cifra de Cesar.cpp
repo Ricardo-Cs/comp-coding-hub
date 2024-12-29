@@ -15,7 +15,7 @@ int main() {
         
         for(int i = 0; i < str.length(); i++) {
             // Decodifica o caractere str[i] subtraindo num e garantindo que o resultado 
-            // esteja dentro do intervalo de letras maiúsculas
+            // esteja dentro do intervalo de letras maiÃºsculas
             str[i] = 'A' + (str[i] - 'A' - num + 26) % 26;
         }
         
