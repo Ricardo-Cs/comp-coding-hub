@@ -8,7 +8,7 @@ int main() {
     
     while(n != 0) {
         string str, reverse_str;
-        getline(cin, str);  // Sem o cin.ignore(), o getline lê uma linha vazia por causa do '\n' do cin >> n
+        getline(cin, str);  // Sem o cin.ignore(), o getline lÃª uma linha vazia por causa do '\n' do cin >> n
 
         // Primeira passada
         for(int i = 0; i < str.length(); i++) {
