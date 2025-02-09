@@ -2,28 +2,24 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-int main()
-{
+
+// Sempre que uma mudança for feita, a resposta sempre será 1, caso contrário será o tamanho da string.
+int min_length(string text) {
+    int size = text.size();
+    for (int i = 0; i < size - 1; ++i) {
+        if (text[i] == text[i + 1]) 
+            return 1;
+    }
+    return size;
+}
+ 
+int main() {
     int n;
     cin >> n;
     while(n--) {
         string text;
         cin >> text;
-        int size = text.size();
-
-        bool reduced = true;
-        while (size > 1 && reduced) {
-            reduced = false; // Assume que não haverá remoções
-            for (int i = 0; i < size - 1; i++) { // Evita acesso fora do limite
-                if (text[i] == text[i + 1]) {
-                    text.erase(i + 1, 1); // Remove text[i+1] corretamente
-                    size--;
-                    reduced = true; // Indica que houve alteração
-                    break; // Importante: Reiniciar a verificação do início
-                }
-            }
-        }
-        cout << size << endl;
+        cout << min_length(text) << endl;
     }
     return 0;
 }
